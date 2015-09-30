@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="
@@ -14,17 +14,17 @@
 	<context:annotation-config />
 	<!-- component-scan　を設定すると、autowired設定も自動的に設定される。 -->
 	<!-- 検出してほしいクラスに、@Component　などのアノテーションをつける -->
-	<context:component-scan base-package="net.yoppyi.aop" />
-	<context:component-scan base-package="net.yoppyi.service" />
-	<context:component-scan base-package="net.yoppyi.dao" />
-	<context:component-scan base-package="net.yoppyi.controller" />
+	<context:component-scan base-package="aop" />
+	<context:component-scan base-package="service" />
+	<context:component-scan base-package="dao" />
+	<context:component-scan base-package="controller" />
 
 	<aop:aspectj-autoproxy/>
 
 	<aop:config>
 		<aop:aspect id="methodlog" ref="methodLogger">
 			<aop:around pointcut-ref="methodlogPointcut" method="around" />
-			<aop:pointcut id="methodlogPointcut" expression="execution(* net.yoppyi.service..*(..))" />
+			<aop:pointcut id="methodlogPointcut" expression="execution(* service..*(..))" />
 		</aop:aspect>
 	</aop:config>
 
@@ -36,7 +36,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- // データベース接続 
+	<!-- // データベース接続
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
