@@ -1,4 +1,9 @@
 # 022_Spring
+## 作成したもの
+クローンすればすぐに動かすことができるSpringプロジェクト
+cloneURL:https://github.com/shioriwest/young.git
+branch:022_Spring
+
 ## この課題を選択した理由
 - SpringMVCの復習
 - Javaプロジェクト構築の復習
@@ -15,14 +20,6 @@
 - ビルドツール
    - Gradle2.6
 
-## 課題に取り組んでみて
-cloneすればすぐに動かすことができるSpringのプロジェクトを作成しました。<br/>
-ローカルサーバーに乗せて/springsampleでHello！が出るはずです。<br/>
-MVCとAOPを使用しています。
-
-MVCでよくわからなかった点は、viewsフォルダ内の拡張子をjsp以外のものにするとコントローラークラスから遷移してくれなくなることです。<br/>
-application-configのviewResolverにhtmlを指定してるのに遷移してくれない。
-
-サービスクラスのメソッドが呼ばれるとAOP（ロガー）が動くようになってます。
-
-他にも時間あればExceptionHandllerとか実装しようと思っていたけど、とりあえず１ヶ月に一つあげとこうかなと思ったのでここで一度プルリク出します。
+## 使用したSpringモジュール
+- MVC
+- AOP
