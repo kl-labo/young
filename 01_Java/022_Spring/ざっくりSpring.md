@@ -19,13 +19,18 @@ Model-View-Controller フレームワーク。<br/>
   - ViewResolver
   - HandlerInterceptor
 
+他にもデータアクセスモジュール、Messagingモジュール、テストモジュールなどがある。
+
 ## ざっくりSpringが選ばれる理由
+
 一つ例として挙げられる点が
+
 #### 他のオープンソースソフトウェアとの連携に優れている
 
-という点である。<br/>
-SpringはHibernate・ Struts・Velocity・FreeMarkerなどの外部のオープンソースソフトウェアとの連携に非常に優れている。<br/>
-例えばアプリケーションの出力先として、 HTML(JSP・Velocity・FreeMarker)XML（XLST）・Excel・PDFなどを選ぶことができる。<br/>
+という点である。
+
+SpringはHibernate、 Struts、Velocity、FreeMarkerなどの外部のオープンソースソフトウェアとの連携に非常に優れている。<br/>
+例えばアプリケーションの出力先として、 HTML(JSP・Velocity・FreeMarker)、XML（XLST）、Excel、PDFなどを選ぶことができる。
 
 また、データベースのアクセスライブラリとしては、HibernateやJDO、Oracle TopLinkなどを選択することができる。
 

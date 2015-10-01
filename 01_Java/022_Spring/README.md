@@ -1,7 +1,7 @@
 # 022_Spring
 ## 作成したもの
 クローンすればすぐに動かすことができるSpringプロジェクト
-cloneURL:https://github.com/shioriwest/young.git
+cloneURL:https://github.com/shioriwest/young.git<br/>
 branch:022_Spring
 
 ## この課題を選択した理由
