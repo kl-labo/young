@@ -3,4 +3,4 @@ class Ruler
 end
 ruler = Ruler.new
 ruler.length= 45
-puts ruler.length
+p ruler.length

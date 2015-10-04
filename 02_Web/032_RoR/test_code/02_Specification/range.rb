@@ -7,7 +7,7 @@ vacation = Time.at(1343746800)..Time.at(1346425199)
 p vacation.begin
 p vacation.end
 
-abc = ('a'.. 'c')
-abc.each do |c|
-  p c
-end
+p abc = ('a'.. 'c')
+p abc.include?('b')
+p abc.include?('c')
+p abc.include?('d')
