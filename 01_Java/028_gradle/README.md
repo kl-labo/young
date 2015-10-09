@@ -58,7 +58,6 @@ gvm install gradle 2.7
 書き方についてまとめます。  
 以下がサンプルのbuild.gradleになります。
 
-
 ```
 apply plugin: 'java'
 apply plugin: 'eclipse'
