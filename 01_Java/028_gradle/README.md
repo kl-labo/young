@@ -72,9 +72,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.7'
-}
 ```
 
 ### apply plugin
@@ -123,17 +120,83 @@ gradle build
 既存で別のビルドツールを利用していて移行するのでは、また勝手が違ってきます。
 みんなで足並みをそろえて、さあ移行しようというのは中々難しいです。
 そんな悩みをgradleでは解決する方法があるのです！  
-私の場合、現場ではMavenを利用しています。実は**既存のMaven PluginはGradleと互換性がない**ため、既存の資産は使うことができません。ですが1人が設定すれば、あとはみんな使えるっていうのはかなり便利です。  
-調べてみると、やり方もすごく簡単でした。
-build.gradleにwrapperというタスクを追加し、以下のコマンドを実行。(記述の詳細は別ファイル参照)
+以下に、Antからの移行、Mavenからの移行についてまとめます。
+
+### Antからの移行方法
+
+以下のようなbuild.xmlが書かれたsampleというプロジェクトがあるとします。
+
+```
+<project name="sample" default="jar" basedir=".">
+  <!-- 必要なクラスパスを通す -->
+  <path id="build.lib">
+     <fileset dir="src/main/webapp/WEB-INF/lib" includes="*.jar" />
+  </path>
+
+  <!-- コンパイル設定 -->
+  <target name="compile">
+    <mkdir dir="target/classes"/>
+    <javac classpathref="build.lib" srcdir="src/main/java" destdir="target/classes"
+            encoding="utf-8"
+            source="1.6"
+            target="1.6"
+            fork="true"  
+            memorymaximumsize="256m"
+            includeAntRuntime="false"
+            debug="true"
+            debuglevel="lines,vars,source"/>
+  </target>
+
+  <!-- ビルド成果物を毎回削除して再生成 -->
+  <target name="clean">
+     <delete dir="target" />
+     <mkdir dir="target" />
+  </target>
+</project>
+```
+
+ではAntで行っていたビルドをGradleに実行させるにはどうしたらいいのか。  
+build.gradleに以下のように記述するだけです。
+
+```
+ant.importBuild 'build.xml'
+```
+
+そのうえで以下のコマンドを実行すれば、Antタスクをgradleで扱えるようになります。
+
+```
+gradle clean compile
+```
+
+build.xmlは残ってしまうため完全な移行とは言えないですが、build.gradleでラップしているため、
+あまりAntのことを意識しないで使用できるようになります。
+
+### Mavenからの移行方法
+
+私の場合、現場ではMavenを利用しています。ただ**既存のMaven PluginはGradleと互換性がない**ため、既存の資産は使うことができません。
+Mavenからの移行は少々手間がかかります。
+
+## gradle wrapper
+
+Gradleにはgradle wrapperという仕組みが用意されていて、 こちらの仕組みを利用するとGradleを1人インストールすれば、他の人はgradle wrapperによって出来上がる成果物でGradleが使えるという優れモノです。
+この仕組みを利用するには、build.gradleにwrapperというタスクを追加します。
+
+```
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.7'
+}
+```
+
+その後で、以下のコマンドを実行します。
 
 ```
 gradle wrapper
 ```
 
-そうするとgradlew、gradlew.batというファイルとgradle用のフォルダが出来上がります。
+そうするとgradlew、gradlew.batとgradle用のフォルダが出来上がります。
 他のひとはWindows環境の場合には上記のバッチファイル、MacやLinuxの環境ではgradlewを実行するだけで、gradleコマンドを実行する必要はありません。
-これだけでもかなり移行のハードルが下がりますし、個人的にはすぐやってみたいですね。
+Maven Pluginとの互換性がないのは痛手ですが、1人が設定すれば同じように使えるのは、
+コストを払っても移行する価値があります。
 
 ## Gradleを調べてみて
 
