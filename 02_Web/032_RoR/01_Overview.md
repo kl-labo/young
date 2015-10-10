@@ -12,7 +12,7 @@ https://www.ruby-lang.org/ja/documentation/
 http://ruby-doc.org/core-2.2.0/
 
 ## 1-2 全てがオブジェクト  
-Rubyの最もわかりやすい特徴として「全てがオブジェクト」という点が挙げられます。Javaの数値やtrue、falseのようなプリミティブ型ガRubyには存在しません。1もtrueもnilもすべてオブジェクトです。そのため、数値やtrueのような値でもメソッドを呼び出すことが可能となります。実際に試してみましょう。
+Rubyの最もわかりやすい特徴として「全てがオブジェクト」という点が挙げられます。Javaの数値やtrue、falseのようなプリミティブ型がRubyには存在しません。1もtrueもnilもすべてオブジェクトです。そのため、数値やtrueのような値でもメソッドを呼び出すことが可能となります。実際に試してみましょう。
 ```ruby
 p 'hello'.class        #String
 p String.ancestors     #[String, Comparable, Object, Kernel, BasicObject]
@@ -23,19 +23,18 @@ p TrueClass.ancestors  #[TrueClass, Object, Kernel, BasicObject]
 p nil.class            #NilClass
 p NilClass.ancestors   #[NilClass, Object, Kernel, BasicObject]
 ```
-<span　style="font-size:80% color:#666666">
 ※.classはクラス名を取得し、.ancestorsは継承しているクラスをすべて取得します。  
 ※nilは存在しないという意味で他言語で言うところのnullにあたります。  
-</span>
 すべてのクラスがObjectを継承していることがわかります。  
 
 ## 1-3 いろいろなRuby実装
 Rubyには複数の実装が存在します。本家のRubyは区別のためMRI（Matz Ruby Inplements)と呼ばれています。  
 
-|名前   |概要                                               |URL                           |
-|-|- |
-|JRuby  |Javaで実装されたRubyでJavaのライブラリが使用可能。 |http://jruby.org/             |
-|MacRuby|Mac上のCocoaフレームワークを利用できる。           |http://www.macruby.org/       |
-|mruby  |軽量版Ruby。                                       |https://github.com/mruby/mruby|
+
+|名前|概要|URL|
+|--|--|--|
+|JRuby|Javaで実装されたRubyでJavaのライブラリが使用可能。|http://jruby.org/ |
+|MacRuby|Mac上のCocoaフレームワークを利用できる。|http://www.macruby.org/ |
+|mruby|軽量版Ruby。|https://github.com/mruby/mruby |
 
 まだまだ面白い特徴はありますが、それは基礎を勉強してから見ていきましょう。

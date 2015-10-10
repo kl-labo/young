@@ -94,7 +94,7 @@ while i < languages.length
 end
 # Perl Python Ruby
 ```
-### - until文 -
+### until文
 until文はwhile文と逆の動きをします。
 ``` ruby
 languages = %w(Perl Python Ruby)
@@ -106,7 +106,7 @@ end
 # Perl Python Ruby
 ```
 
-### - 後置while文 -
+### 後置while文
 処理の後ろにwhile文を記述することでJavaのdo-while文と同じ動きをします。beginとend-whileを利用すると複数の処理を実行させることができます。
 ```ruby
 languages = %w(Perl Python Ruby)
@@ -123,7 +123,7 @@ i += 1
 end while i < languages.length
 # Perl Python Ruby
 ```
-### - for文 -
+### for文
 for文はJavaとは大きく異なり、拡張for文のような形になります。また、for文で宣言した変数にfor文の外からも参照することができます。他にもハッシュ配列のkeyとvalueを同時に取得することも可能です。
 
 ```Ruby
