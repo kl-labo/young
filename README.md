@@ -2,7 +2,7 @@
 
 いろいろ勉強したことを集約するリポジトリです。
 
-<img src="https://dl.dropboxusercontent.com/u/141509/norosk02.png" style="width:100px">
+<img src="https://dl.dropboxusercontent.com/u/141509/norosk02.png" width="100px">
 
 
 ## Issueの登録について
