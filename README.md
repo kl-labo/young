@@ -2,6 +2,9 @@
 
 いろいろ勉強したことを集約するリポジトリです。
 
+<img src="https://dl.dropboxusercontent.com/u/141509/norosk02.png" style="width:100px">
+
+
 ## Issueの登録について
 
 学習に着手するまえにISSUE登録をお願いします。Issueはkl-lab/youngで登録します。
