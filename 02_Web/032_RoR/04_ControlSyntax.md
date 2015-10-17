@@ -1,10 +1,10 @@
-# 3章 Rubyの制御構文
+# 4章 Rubyの制御構文
 この章ではRubyの制御構文の書き方や特徴について説明します。
 Rubyの制御構文はJavaと書き方は似ていますが、戻り値を持っているなどより利便性が高くなっています。
 
-## 3-1 条件分岐
-### if文
-Rubyのif文は最後に評価された値を戻り値として返します。elsifという書き方にも注意が必要です。
+## 4-1 if文
+Rubyのif文は最後に評価された値を戻り値として返します。
+elsifという書き方にも注意が必要です。
 
 ```ruby
 n = 2
@@ -21,8 +21,9 @@ messsage =
   end
 p message     # 偶数です
 ```
-### unless文
-unless文はif文と逆の働きをします。ただし、elseを記述することはできません。
+## 4-2 unless文
+unless文はif文と逆の働きをします。
+ただし、elseを記述することはできません。
 ```ruby
 n = 2
 message =
@@ -32,23 +33,27 @@ message =
 p message   # 0ではありません
 ```
 
-### 後置if文
-if文を処理の後ろに書くことができます。条件式がtrueの時のみ処理が実行されます。主に可読性を上げるために用いられます。
+## 4-3 後置if文
+if文を処理の後ろに書くことができます。
+条件式がtrueの時のみ処理が実行されます。
+主に可読性を上げるために用いられます。
 ```ruby
 n = 2
 p '0でした' if n.zero?
 p '0ではありません' unless n.zero?
 ```
 
-### 三項演算子
+## 4-4 三項演算子
 三項演算子も記述することができます。
 ```ruby
 message = n.zero? '0です' : '0ではありません'
 p message  # 0ではありません
 ```
 
-### case文
-Rubyのcase文はJavaのswitch文にあたります。if文同様、最後に評価された値を戻り値とします。thenを利用することで可読性を上げることができます。
+## 4-5 case文
+Rubyのcase文はJavaのswitch文にあたります。
+if文同様、最後に評価された値を戻り値とします。
+thenを利用することで可読性を上げることができます。
 ```ruby
 stone = 'ruby'
 
@@ -82,8 +87,7 @@ message =
 p message     # 7月
 ```
 
-## 3-2 繰り返し構文
-### while文
+## 4-6 while文
 Java同様、条件式がtrueの間、処理を繰り返します。
 ```ruby
 languages = %w(Perl Python Ruby)
@@ -94,7 +98,7 @@ while i < languages.length
 end
 # Perl Python Ruby
 ```
-### until文
+## 4-7 until文
 until文はwhile文と逆の動きをします。
 ``` ruby
 languages = %w(Perl Python Ruby)
@@ -106,8 +110,9 @@ end
 # Perl Python Ruby
 ```
 
-### 後置while文
-処理の後ろにwhile文を記述することでJavaのdo-while文と同じ動きをします。beginとend-whileを利用すると複数の処理を実行させることができます。
+## 4-8 後置while文
+処理の後ろにwhile文を記述することでJavaのdo-while文と同じ動きをします。
+beginとend-whileを利用すると複数の処理を実行させることができます。
 ```ruby
 languages = %w(Perl Python Ruby)
 i = 0
@@ -123,8 +128,10 @@ i += 1
 end while i < languages.length
 # Perl Python Ruby
 ```
-### for文
-for文はJavaとは大きく異なり、拡張for文のような形になります。また、for文で宣言した変数にfor文の外からも参照することができます。他にもハッシュ配列のkeyとvalueを同時に取得することも可能です。
+## 4-9 for文
+for文はJavaとは大きく異なり、拡張for文のような形になります。
+また、for文で宣言した変数にfor文の外からも参照することができます。
+他にもハッシュ配列のkeyとvalueを同時に取得することも可能です。
 
 ```Ruby
 for name in %w(Alice Bob Carol)
@@ -141,8 +148,12 @@ for key, val in {a: 1, b: 2}
   p val
 end
 ```
-### -その他の繰り返し構文 -
-Rubyには他にも便利な繰り返し構文が多数存在します。loop文はbreakするまで無限に処理を繰り返します。timesメソッドは数値オブジェクトの回数分処理を繰り返します。eachメソッドは要素数分処理を繰り返します。繰り返し文中ではredoというもう一度同じ処理を繰り返す命令を記述することができます。
+### 4-10 その他
+Rubyには他にも便利な繰り返し構文が多数存在します。
+loop文はbreakするまで無限に処理を繰り返します。
+timesメソッドは数値オブジェクトの回数分処理を繰り返します。
+eachメソッドは要素数分処理を繰り返します。
+繰り返し文中ではredoというもう一度同じ処理を繰り返す命令を記述することができます。
 
 ```ruby
 # loop
@@ -167,5 +178,4 @@ languages = %w(Ruby Perl Java C#)
   redo
 
   # Ruby Perl Java found Java Found Java...繰り返し
-}
 ```
