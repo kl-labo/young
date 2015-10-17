@@ -133,7 +133,7 @@ for文はJavaとは大きく異なり、拡張for文のような形になりま�
 また、for文で宣言した変数にfor文の外からも参照することができます。
 他にもハッシュ配列のkeyとvalueを同時に取得することも可能です。
 
-```Ruby
+```ruby
 for name in %w(Alice Bob Carol)
   p name
 end
@@ -148,7 +148,7 @@ for key, val in {a: 1, b: 2}
   p val
 end
 ```
-### 4-10 その他
+### 4-10 その他の繰り返し構文
 Rubyには他にも便利な繰り返し構文が多数存在します。
 loop文はbreakするまで無限に処理を繰り返します。
 timesメソッドは数値オブジェクトの回数分処理を繰り返します。
