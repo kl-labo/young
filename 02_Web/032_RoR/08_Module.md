@@ -1,9 +1,10 @@
 # 8章 Module
+
 この章ではRubyのModuleの仕様について説明します。
 
 ## 8-1 Moduleとは
-モジュールとは処理をひとまとめにして定義したものです。
-以下の特徴があります。
+
+モジュールとは処理をひとまとめにして定義したものです。モジュールには以下の特徴があります。
 
 + インスタンスを生成することができない
 + 継承することはできない
@@ -30,8 +31,9 @@ Greetable.say_hello   # Hello module
 ```
 
 ## 8-2 Mix-in
-モジュールは前述の通り、クラスのインスタンスメソッドとして取り込む事ができます。これをMix-inといいます。
-Mix-inを行うにはincludeを用います。
+
+モジュールは前述の通り、クラスのインスタンスメソッドとして取り込む事ができます。これをMix-inといいます。Mix-inを行うにはincludeを用います。
+
 ```ruby
 module Greetable
   def say_hello(name)
@@ -46,7 +48,9 @@ end
 hum = Human.new
 hum.say_hello 'Mix-in'    # Hello Mix-in
 ```
+
 一つのクラスに複数のmoduleをMix-inすることもできます。
+
 ```ruby
 module ModuleA
   def say_A
@@ -68,7 +72,9 @@ ab = AandB.new
 ab.say_A    # Hello A
 ab.say_B    # Hello B
 ```
+
 また、Moduleの中にModuleをMix-inすることもできます。
+
 ```ruby
 module ModuleA
   def say_A
@@ -92,8 +98,9 @@ ab.say_B    # Hello B
 ```
 
 ## 8-3 extend
-Moduleに定義されたメソッドはオブジェクトの特異メソッドとして取り込むことができます。
-取り込むためにはextendを用います。
+
+Moduleに定義されたメソッドはオブジェクトの特異メソッドとして取り込むことができます。取り込むためにはextendを用います。
+
 ```ruby
 module Greetable
   def say_hello(name)
@@ -106,8 +113,9 @@ o.extend Greetable
 
 o.say_hello 'Ruby!'   # Hello Ruby!
 ```
-また、クラスもオブジェクトなので、Moduleをextendすることが可能です。
-クラス定義内でextendするとクラスメソッドとして取り込みます。
+
+また、クラスもオブジェクトなので、Moduleをextendすることが可能です。クラス定義内でextendするとクラスメソッドとして取り込みます。
+
 ```ruby
 module Greetable
   def say_hello(name)

@@ -1,9 +1,11 @@
 # 7章 blockとProc
+
 この章ではRubyのblockとProcについて説明します。
 
 ## 7-1 block
-blockとは処理のまとまりを引数としてメソッドに渡すためのものです。do-endや{}で囲って記述します。
-ブロックを仮引数として受け取るメソッドを記述するには&を使用します。
+
+blockとは処理のまとまりを引数としてメソッドに渡すためのものです。do-endや{}で囲って記述します。ブロックを仮引数として受け取るメソッドを記述するには&を使用します。
+
 ```ruby
 # ブロックを引数として受け取るメソッド
 def recieve_block(&block)
@@ -18,7 +20,9 @@ end
 ```
 
 ## 7-2 yield
+
 yieldを使ってcallと仮引数を省略できます。
+
 ```ruby
 def recieve_block
   yield
@@ -31,8 +35,9 @@ end
 ```
 
 ## 7-3 Proc
-Procはblockをオブジェクトとして定義できるようにしたものです。
-Proc.newの引数にブロックを渡して生成できます。仮引数は|name|のように縦線で囲って記述します。
+
+Procはblockをオブジェクトとして定義できるようにしたものです。Proc.newの引数にブロックを渡して生成できます。仮引数は|name|のように縦線で囲って記述します。
+
 ```ruby
 greeter = Proc.new  do |name|
     p "Hello , #{name}!"
