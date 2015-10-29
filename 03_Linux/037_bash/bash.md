@@ -484,12 +484,14 @@ tatsuya:sh tatsuya$ ./while.sh
 8
 9
 ```
-fdfsfdsfjksajfklsajfl;sdajfkls;daw
 
 
 
 
 
-参考文献：http://furyo.on-air.ne.jp/linux/bash.html
-　　　　：http://www.k4.dion.ne.jp/~mms/unix/shellscript/shell_calc.html
+
+参考文献
+
+http://furyo.on-air.ne.jp/linux/bash.html
+http://www.k4.dion.ne.jp/~mms/unix/shellscript/shell_calc.html
 http://itref.fc2web.com/unix/shell.html
