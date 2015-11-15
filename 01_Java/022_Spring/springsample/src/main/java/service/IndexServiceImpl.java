@@ -3,14 +3,14 @@ package service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import dao.SampleDao;
+import dao.IndexDao;
 
 @Component
-public class SampleServiceImpl implements SampleService {
+public class IndexServiceImpl implements IndexService {
 	@Autowired
-	SampleDao sampleDao;
+	IndexDao indexDao;
 
-	public String sayHello() {
-		return sampleDao.sayHello();
+	public String selectMsg() {
+		return indexDao.selectMsg();
 	}
 }
