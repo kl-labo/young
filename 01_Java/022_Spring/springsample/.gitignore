@@ -1,0 +1,86 @@
+# Created by http://gitignore.io
+
+### Java ###
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+### Eclipse ###
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+bin/
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+### IntelliJ ###
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+
+### NetBeans ###
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+build.xml
+build.properties
+
+/.nb-gradle/private/
+
+### Gradle ###
+# Exclude Folder List #
+.gradle/
+build/
+!gradle/**/*
+gradle.properties
+ext/
+
+### OSX ###
+.DS_Store
+.AppleDoublea
+.LSOverride
+
+### Windows ###
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+### Maven ###
+target/
+
+/bin
+
+*.log
+*.tgz
+/.apt_generated/
+.factorypath
