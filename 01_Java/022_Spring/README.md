@@ -22,6 +22,8 @@ Import->Existing Projects into Workspace
 　その時は再度ビルドした後プロジェクトをリフレッシュ、サーバーを再起動してください。
 5.  http://localhost:8080/springsample/ にアクセス
 
+> Tomcat v8.0.15ではなぜか動きませんでした。v8.0.28だと動作しました。 - murayama。
+
 ## この課題を選択した理由
 
 - SpringMVCの復習
@@ -44,3 +46,8 @@ Import->Existing Projects into Workspace
 
 - MVC
 - AOP
+
+## 作成したドキュメント
+
+- [Springとは](./Springとは.md)
+- [まとめ](./まとめ.md)
