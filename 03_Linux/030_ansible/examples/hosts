@@ -1,0 +1,8 @@
+[vagrant:children]
+web
+[vagrant:vars]
+ansible_ssh_user=vagrant
+
+[web]
+web1
+web2
