@@ -1,0 +1,22 @@
+---
+
+- hosts: web            # inventoryファイルに記述したwebグループのホストが対象
+  remote_user: vagrant  # 実行ユーザー
+  sudo: yes             # sudoで実行する
+  vars:                 # 変数を宣言する
+    httpd_port: 80/tcp
+
+  tasks:                # サーバーに対して実行するタスク(=モジュール)を列挙する
+    - name: ApacheをYumでインストールする # タスク名
+      yum: name=httpd state=present       # 実行するモジュール
+
+    - name: Apacheのサービスを開始する
+      service: name=httpd state=started enabled=yes
+
+    - name: Apacheのポートをファイアウォールで許可
+      firewalld: permanent=True port={{ httpd_port }} state=enabled
+      notify: ファイアウォールを再起動    # ハンドラを実行するトリガー
+
+  handlers:                               # notifyによって起動されるハンドラ
+    - name: ファイアウォールを再起動
+      service: name=firewalld state=restarted
