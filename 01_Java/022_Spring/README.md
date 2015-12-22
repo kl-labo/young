@@ -6,9 +6,11 @@ SpringBootおさらいアプリケーション
 
 ## プロジェクトのcloneからcheckoutまで
 
+```
 git clone https://github.com/shioriwest/young.git
 git branch -t 022_Spring origin/022_Spring
 git checkout 022_Spring
+```
 
 ## プロジェクト起動方法
 
