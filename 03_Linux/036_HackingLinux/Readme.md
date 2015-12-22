@@ -12,7 +12,7 @@
 やばそうですね。デ◯ノートにしか見えません。
 という事でどうぞよろしくお願いします。
 
-+ [chapter01](../chapter01.md)
-+ [chapter02](../chapter02.md)
-+ [chapter03](../chapter03.md)
-+ [chapter04](../chapter04.md)
++ [chapter01](./chapter01.md)
++ [chapter02](./chapter02.md)
++ [chapter03](./chapter03.md)
++ [chapter04](./chapter04.md)
